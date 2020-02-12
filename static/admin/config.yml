@@ -1,7 +1,7 @@
 backend:
   name: github
   branch: master # Published branch
-  repo: github.com/workwithizzi/gatify
+  repo: workwithizzi/gatify
 
 # Allow for drafting, reviewing, approving posts
 # Only available for Github
