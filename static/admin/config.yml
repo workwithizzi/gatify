@@ -1,6 +1,6 @@
 backend:
   name: github
-  branch: master # Published branch
+  branch: cms-test/yisrael # Published branch
   repo: github.com/workwithizzi/gatify
 
 # Allow for drafting, reviewing, approving posts
