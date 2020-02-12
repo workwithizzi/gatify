@@ -1,0 +1,41 @@
+backend:
+  name: github
+  branch: master # Published branch
+  repo: github.com/workwithizzi/gatify
+
+# Allow for drafting, reviewing, approving posts
+# Only available for Github
+# publish_mode: editorial_workflow
+
+media_folder: static/img # Netlify will store uploaded files in the repo under 'static/img'
+public_folder: /img # The src attribute (where uploads are found in the published site) will begin with /img
+
+collections:
+  - name: "team"
+    label: "Team"
+    folder: "src/team"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Team Member", name: "title", widget: "string" }
+      - { label: "Bio", name: "bio", widget: "markdown" }
+  # - name: "blog" # Post type identifier, used in routes, e.g., /admin/collections/blog (must be unique)
+  #   label: "Blog" # What the admin UI calls the post type.
+  #   folder: "_posts/blog" # The path to the folder where Netlify stores these files
+  #   create: true # Allow users to create new documents in this collection
+  #   slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+  #   # Fields listed here are shown as fields in the content editor, then saved as front matter
+  #   # at the beginning of the document (except for body, which follows the front matter).
+  #   # Each field contains the following properties:
+  #     # - label: Field label in the editor UI.
+  #     # - name: Field name in the document front matter.
+  #     # - widget: Determines UI style and value data type (details below).
+  #     #   - See full list of options: https://www.netlifycms.org/docs/widgets/
+  #     # - default (optional): Sets a default value for the field.
+  #   fields: # The fields for each document, usually in front matter
+  #     - {label: "Layout", name: "layout", widget: "hidden", default: "blog"}
+  #     - {label: "Title", name: "title", widget: "string"}
+  #     - {label: "Publish Date", name: "date", widget: "datetime"}
+  #     - {label: "Featured Image", name: "thumbnail", widget: "image"}
+  #     - {label: "Rating (scale of 1-5)", name: "rating", widget: "number"}
+  #     - {label: "Body", name: "body", widget: "markdown"}

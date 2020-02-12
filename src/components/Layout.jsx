@@ -5,47 +5,75 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React from "react";
-import PropTypes from "prop-types";
-import { useStaticQuery, graphql } from "gatsby";
+import React from "react"
+import PropTypes from "prop-types"
+import { useStaticQuery, graphql } from "gatsby"
+import Img from "gatsby-image"
 
-import Header from "./Header";
-import "./layout.css";
+import Header from "./Header"
+import PostIndex from "./PostIndex"
 
-const Layout = ({ children }) => {
+import layoutStyles from "./layout.module.scss"
+
+
+
+const Layout = ({ children, location }) => {
 	const data = useStaticQuery(graphql`
 		query SiteTitleQuery {
 			site {
 				siteMetadata {
 					title
+					description
+				}
+			}
+			file(relativePath: {
+				regex: "/bg/"
+			}) {
+				childImageSharp {
+					fluid(maxWidth: 1000) {
+					# ...GatsbyImageSharpFluid_tracedSVG
+					...GatsbyImageSharpFluid
+					}
 				}
 			}
 		}
-	`);
+	`)
+
+	const imgHeight = location.pathname === `/` ? 200 : 100
 
 	return (
 		<>
-			<Header siteTitle={data.site.siteMetadata.title} />
-			<div
-				style={{
-					margin: `0 auto`,
-					maxWidth: 960,
-					padding: `0 1.0875rem 1.45rem`,
-				}}
-			>
-				<main>{children}</main>
-				<footer>
-					© {new Date().getFullYear()}, Built with
-					{` `}
-					<a href="https://www.gatsbyjs.org">Gatsby</a>
-				</footer>
+			<Header />
+			<div style={{
+				overflow: `hidden`,
+				height: imgHeight,
+			}}>
+				<Img fluid={data.file.childImageSharp.fluid} />
 			</div>
+
+			<main className={layoutStyles.container}>
+				<div>
+					{children}
+				</div>
+				<PostIndex />
+			</main>
+
+			<footer>
+				© {new Date().getFullYear()}, Built with
+				{` `}
+				<a href="https://www.gatsbyjs.org">Gatsby</a>
+			</footer>
 		</>
-	);
-};
+	)
+}
+
 
 Layout.propTypes = {
 	children: PropTypes.node.isRequired,
-};
+}
 
-export default Layout;
+Layout.defaultProps = {
+	location: {},
+}
+
+export default Layout

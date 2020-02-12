@@ -82,3 +82,10 @@ A quick look at the top-level files and directories you'll see in the project.
 11. **`README.md`**: A text file containing useful reference information about your project.
 
 12. **`yarn.lock`** (See `package.json` below, first). This is an automatically generated file based on the exact versions of your npm dependencies that were installed for your project. **(You won’t change this file directly).**
+
+
+Levelup Tutorials -- Pro Gatsby 2
+
+React-spring usage example:
+
+	See: `./src/components/Layout.jsx` ( `animated.div` )
