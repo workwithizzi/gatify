@@ -20,6 +20,17 @@ collections:
       - { label: "Team Member", name: "title", widget: "string" }
       - { label: "Bio", name: "bio", widget: "markdown" }
 
+  - name: "posts"
+    label: "Posts"
+    description: "Description of the collection. Displayed below the label when viewing a collection. Optional."
+    folder: "src/posts"
+    create: true # Allows users to create new items in a 'folder' collection; defaults to false
+    # delete: true # Prevents users from deleting items in a collection; defaults to true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "date" }
+
   # - name: "blog" # Post type identifier, used in routes, e.g., /admin/collections/blog (must be unique)
   #   label: "Blog" # What the admin UI calls the post type.
   #   folder: "_posts/blog" # The path to the folder where Netlify stores these files
