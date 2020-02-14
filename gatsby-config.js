@@ -101,5 +101,13 @@ module.exports = {
 		},
 		`gatsby-plugin-netlify-cms`,
 		`gatsby-plugin-netlify`,
+		{
+			resolve: `gatsby-plugin-react-svg`,
+			options: {
+				rule: {
+					include: /assets/, // See below to configure properly
+				},
+			},
+		},
 	],
 }

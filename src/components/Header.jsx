@@ -1,17 +1,16 @@
 import React from "react"
 import { Link } from "gatsby"
 
-import logo from "../images/logo.svg"
-
+import NetlifyCMSLogo from "../assets/netlify_cms_logo.svg"
 
 const Header = () => (
 	<header style={{ height: `200px` }}>
 
 		{/* Logo/Title */}
 		<h1 style={{ margin: 0 }}>
-			<Link to="/" >
-				Site Title
-				<img src={ logo } alt="Site-Logo" />
+			<Link to="/">
+				Gatify
+				<NetlifyCMSLogo style={{ height: `60px`, width: `60px` }} />
 			</Link>
 		</h1>
 
