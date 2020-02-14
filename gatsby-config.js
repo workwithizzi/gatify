@@ -18,13 +18,28 @@ module.exports = {
 			// 	includePaths: [`src/styles`],
 			// },
 		},
+
+
+		// --- gatsby-source-filesystem
+		{
+			resolve: `gatsby-source-filesystem`,
+			options: {
+				name: `posts`,
+				path: `${__dirname}/src/posts/`,
+				ignore: [`**/.*`], // ignore files starting with a dot
+			},
+		},
 		{
 			resolve: `gatsby-source-filesystem`,
 			options: {
 				name: `images`,
-				path: `${__dirname}/src/images`,
+				path: `${__dirname}/src/images/`,
+				ignore: [`**/.*`], // ignore files starting with a dot
 			},
 		},
+		// gatsby-source-filesystem ---
+
+
 		// {
 		//   resolve: `gatsby-plugin-google-analytics`,
 		//   options: {
@@ -67,22 +82,7 @@ module.exports = {
 			},
 		},
 		`gatsby-plugin-offline`, // Configure this plugin after 'plugin-manifest'
-		{
-			resolve: `gatsby-source-filesystem`,
-			options: {
-				name: `posts`,
-				path: `${__dirname}/src/posts/`,
-				ignore: [`**/.*`], // ignore files starting with a dot
-			},
-		},
-		{
-			resolve: `gatsby-source-filesystem`,
-			options: {
-				name: `images`,
-				path: `${__dirname}/src/images/`,
-				ignore: [`**/.*`], // ignore files starting with a dot
-			},
-		},
+
 		{
 			// Used for markdown
 			resolve: `gatsby-transformer-remark`,
