@@ -1,7 +1,7 @@
 const netlifyIdentity = require(`netlify-identity-widget`)
 
 netlifyIdentity.init({
-  container: `#netlify-modal`, // defaults to document.body,
+	container: `#netlify-modal`, // defaults to document.body,
 })
 
 netlifyIdentity.open() // open the modal
