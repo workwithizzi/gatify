@@ -2,6 +2,7 @@ backend:
   name: github
   branch: master # Published branch
   repo: workwithizzi/gatify
+  base_url: https://netlify-cms-github.herokuapp.com/
 
 # Allow for drafting, reviewing, approving posts
 # Only available for Github
