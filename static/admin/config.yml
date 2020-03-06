@@ -1,7 +1,7 @@
 backend:
-  name: github
-  branch: master # Published branch
-  repo: workwithizzi/gatify
+  name: git-gateway
+  identity_url: "https://keen-ride-00a9b9.netlify.com/.netlify/identity"
+  gateway_url: "https://keen-ride-00a9b9.netlify.com/.netlify/git"
 
 # Allow for drafting, reviewing, approving posts
 # Only available for Github
